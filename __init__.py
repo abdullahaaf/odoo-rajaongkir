@@ -33,7 +33,8 @@ def create_city_data(cr, registry):
                 'zipcode': city.get('postal_code'),
                 'name': city.get('city_name'),
                 'province_name': city.get('province'),
-                'rajaongkir_city_id': city.get('city_id')
+                'rajaongkir_city_id': city.get('city_id'),
+                'city_type': city.get('type')
             }
             res_city_data.append(data)
 
