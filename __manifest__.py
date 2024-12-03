@@ -11,5 +11,5 @@
         'base_address_extended',
         'mail'
     ],
-    'post_init_hook': 'create_city_data'
+    'post_init_hook': '_init_city_data'
 }

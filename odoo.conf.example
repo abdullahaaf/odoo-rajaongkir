@@ -1,0 +1,19 @@
+[options]
+addons_path =
+
+db_host =
+db_port =
+db_user =
+db_password =
+
+
+db_name =
+log_level = debug
+without_demo =
+limit_time_real =
+http_port=
+admin_passwd=
+
+# custom config for rajaongkir
+rajaongkir_api_key=
+rajaongkir_base_url=

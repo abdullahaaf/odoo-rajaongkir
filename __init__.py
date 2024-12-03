@@ -1,24 +1,23 @@
-import os, requests
+import requests
 
-from odoo import api, SUPERUSER_ID
+from odoo.tools.config import config
 
 from . import models
 
 
-def create_city_data(cr, registry):
+def _init_city_data(env):
     """
     fill Indonesian city data which received from
     Rajaongkir API
 
     This method called on `post_init_hook` on module manifest
     """
-    env = api.Environment(cr, SUPERUSER_ID, {})
     country_code_id = env['res.country'].search([('code', '=', 'ID')])
     city_data = env['res.city'].search([('country_id', '=', country_code_id.id)])
 
     if not city_data:
-        api_key = os.getenv('API_KEY')
-        base_url = os.getenv('BASE_URL')
+        api_key = config.get('rajaongkir_api_key')
+        base_url = config.get('rajaongkir_base_url')
         headers = {'key': api_key}
         list_city_endpoint = f'{base_url}/city'
 
